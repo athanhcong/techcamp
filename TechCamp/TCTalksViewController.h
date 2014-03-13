@@ -10,4 +10,6 @@
 
 @interface TCTalksViewController : UITableViewController
 
+@property (nonatomic, strong) NSArray *talks;
+
 @end

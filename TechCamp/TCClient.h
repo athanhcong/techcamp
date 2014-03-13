@@ -1,0 +1,20 @@
+//
+//  TCClient.h
+//  TechCamp
+//
+//  Created by KONG on 13/3/14.
+//  Copyright (c) 2014 TechCamp. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+#import "YAClient.h"
+
+@interface TCClient : YAClient
+
+
+
+- (id)cachedTalks;
+- (void)getTalksWithBlock:(YAArrayResultBlock)block;
+
+@end

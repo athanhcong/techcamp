@@ -6,13 +6,23 @@
 //  Copyright (c) 2014 TechCamp. All rights reserved.
 //
 
-#import "TCAppDelegate.h"
+#import "AppDelegate.h"
+#import <FormatterKit/TTTColorFormatter.h>
 
-@implementation TCAppDelegate
+
+
+#import "YAFakeAPIServer.h"
+
+
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [YAFakeAPIServer registerFakeServerWithHost:SERVER_API_HOST];
+
+    [self setupAppearance];
     return YES;
 }
 							
@@ -42,5 +52,26 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+- (void)setupAppearance {
+    
+//    UIColor *techcampTintColor = [[[TTTColorFormatter alloc] init] colorFromHexadecimalString:@"db4f4f"];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    UIColor *barTintColor = [[[TTTColorFormatter alloc] init] colorFromHexadecimalString:@"FF1300"];
+    //FF1300
+    UIColor *tintColor = [UIColor whiteColor];
+
+    [[UINavigationBar appearance] setBarTintColor:barTintColor];
+    [[UINavigationBar appearance] setTintColor:tintColor];
+
+    [[UINavigationBar appearance] setTitleTextAttributes:@{UITextAttributeTextColor: tintColor}];
+    
+    self.window.tintColor = barTintColor;
+    
+}
+
 
 @end

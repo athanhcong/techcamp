@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TCTalk.h"
 @interface TCTalkCell : UITableViewCell
+
+@property (nonatomic, strong) TCTalk *talk;
+
+
+@property (nonatomic, strong) IBOutlet UILabel *titleLabel, *speakerNameLabel;
+
+@property (nonatomic, strong) IBOutlet UIButton *voteButton, *favoriteButton;
+- (void)updateViewWithTalk:(TCTalk *)talk;
 
 @end

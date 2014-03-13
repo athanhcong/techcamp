@@ -7,17 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7CEFBB2C3674E0685B45385 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE27D87AB4F4DDF8F98DD4F /* libPods.a */; };
 		FC583D5318D16762005F50E6 /* TCTalkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D5218D16762005F50E6 /* TCTalkCell.m */; };
 		FC583D5618D16770005F50E6 /* TCActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D5518D16770005F50E6 /* TCActivityCell.m */; };
+		FC583D6D18D16B3A005F50E6 /* YAClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D5C18D16B3A005F50E6 /* YAClient.m */; };
+		FC583D6E18D16B3A005F50E6 /* YAObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D5F18D16B3A005F50E6 /* YAObject.m */; };
+		FC583D6F18D16B3A005F50E6 /* YAUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D6118D16B3A005F50E6 /* YAUser.m */; };
+		FC583D7018D16B3A005F50E6 /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D6418D16B3A005F50E6 /* NSObject+JSON.m */; };
+		FC583D7118D16B3A005F50E6 /* NSObject+JsonMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D6618D16B3A005F50E6 /* NSObject+JsonMapping.m */; };
+		FC583D7218D16B3A005F50E6 /* NSObject+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D6818D16B3A005F50E6 /* NSObject+Random.m */; };
+		FC583D7618D179CE005F50E6 /* TCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D7518D179CE005F50E6 /* TCClient.m */; };
+		FC583D7B18D17FD8005F50E6 /* ILCannedURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D7A18D17FD8005F50E6 /* ILCannedURLProtocol.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FC583D7E18D18089005F50E6 /* YAFakeAPIServer.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D7D18D18089005F50E6 /* YAFakeAPIServer.m */; };
+		FC583D7F18D18089005F50E6 /* YAFakeAPIServer.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D7D18D18089005F50E6 /* YAFakeAPIServer.m */; };
+		FC583D8218D18233005F50E6 /* gist.json in Resources */ = {isa = PBXBuildFile; fileRef = FC583D8118D18233005F50E6 /* gist.json */; };
+		FC583D8318D18233005F50E6 /* gist.json in Resources */ = {isa = PBXBuildFile; fileRef = FC583D8118D18233005F50E6 /* gist.json */; };
+		FC583D8518D18565005F50E6 /* talks.json in Resources */ = {isa = PBXBuildFile; fileRef = FC583D8418D18565005F50E6 /* talks.json */; };
+		FC583D8618D18565005F50E6 /* talks.json in Resources */ = {isa = PBXBuildFile; fileRef = FC583D8418D18565005F50E6 /* talks.json */; };
+		FC583D8A18D186BC005F50E6 /* TCTalk.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D8918D186BC005F50E6 /* TCTalk.m */; };
+		FC583D8B18D186BC005F50E6 /* TCTalk.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D8918D186BC005F50E6 /* TCTalk.m */; };
+		FCAD925C18D198BC00FC43A8 /* TCTalkDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAD925B18D198BC00FC43A8 /* TCTalkDetailViewController.m */; };
+		FCC0259A18D1C92400F332E3 /* UIImage+ColorTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC0259918D1C92400F332E3 /* UIImage+ColorTransformation.m */; };
+		FCC0259D18D1C92A00F332E3 /* NSObject+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC0259C18D1C92A00F332E3 /* NSObject+Block.m */; };
 		FCE5501918D1621D0093388D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE5501818D1621D0093388D /* Foundation.framework */; };
 		FCE5501B18D1621D0093388D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE5501A18D1621D0093388D /* CoreGraphics.framework */; };
 		FCE5501D18D1621D0093388D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE5501C18D1621D0093388D /* UIKit.framework */; };
 		FCE5502318D1621D0093388D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCE5502118D1621D0093388D /* InfoPlist.strings */; };
 		FCE5502518D1621D0093388D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE5502418D1621D0093388D /* main.m */; };
-		FCE5502918D1621D0093388D /* TCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE5502818D1621D0093388D /* TCAppDelegate.m */; };
+		FCE5502918D1621D0093388D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE5502818D1621D0093388D /* AppDelegate.m */; };
 		FCE5502C18D1621D0093388D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE5502A18D1621D0093388D /* Main.storyboard */; };
-		FCE5502F18D1621D0093388D /* TCFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE5502E18D1621D0093388D /* TCFirstViewController.m */; };
-		FCE5503218D1621D0093388D /* TCSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE5503118D1621D0093388D /* TCSecondViewController.m */; };
 		FCE5503418D1621D0093388D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCE5503318D1621D0093388D /* Images.xcassets */; };
 		FCE5503B18D1621D0093388D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE5503A18D1621D0093388D /* XCTest.framework */; };
 		FCE5503C18D1621D0093388D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE5501818D1621D0093388D /* Foundation.framework */; };
@@ -40,10 +58,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5FE27D87AB4F4DDF8F98DD4F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6759C385C25F430C9E0281FE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FC583D5118D16762005F50E6 /* TCTalkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTalkCell.h; sourceTree = "<group>"; };
 		FC583D5218D16762005F50E6 /* TCTalkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTalkCell.m; sourceTree = "<group>"; };
 		FC583D5418D16770005F50E6 /* TCActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCActivityCell.h; sourceTree = "<group>"; };
 		FC583D5518D16770005F50E6 /* TCActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCActivityCell.m; sourceTree = "<group>"; };
+		FC583D5B18D16B3A005F50E6 /* YAClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAClient.h; sourceTree = "<group>"; };
+		FC583D5C18D16B3A005F50E6 /* YAClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAClient.m; sourceTree = "<group>"; };
+		FC583D5E18D16B3A005F50E6 /* YAObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAObject.h; sourceTree = "<group>"; };
+		FC583D5F18D16B3A005F50E6 /* YAObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAObject.m; sourceTree = "<group>"; };
+		FC583D6018D16B3A005F50E6 /* YAUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAUser.h; sourceTree = "<group>"; };
+		FC583D6118D16B3A005F50E6 /* YAUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAUser.m; sourceTree = "<group>"; };
+		FC583D6318D16B3A005F50E6 /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSON.h"; sourceTree = "<group>"; };
+		FC583D6418D16B3A005F50E6 /* NSObject+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSON.m"; sourceTree = "<group>"; };
+		FC583D6518D16B3A005F50E6 /* NSObject+JsonMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JsonMapping.h"; sourceTree = "<group>"; };
+		FC583D6618D16B3A005F50E6 /* NSObject+JsonMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JsonMapping.m"; sourceTree = "<group>"; };
+		FC583D6718D16B3A005F50E6 /* NSObject+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Random.h"; sourceTree = "<group>"; };
+		FC583D6818D16B3A005F50E6 /* NSObject+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Random.m"; sourceTree = "<group>"; };
+		FC583D6B18D16B3A005F50E6 /* YAConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAConstants.h; sourceTree = "<group>"; };
+		FC583D7418D179CE005F50E6 /* TCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCClient.h; sourceTree = "<group>"; };
+		FC583D7518D179CE005F50E6 /* TCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCClient.m; sourceTree = "<group>"; };
+		FC583D7918D17FD8005F50E6 /* ILCannedURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILCannedURLProtocol.h; sourceTree = "<group>"; };
+		FC583D7A18D17FD8005F50E6 /* ILCannedURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILCannedURLProtocol.m; sourceTree = "<group>"; };
+		FC583D7C18D18089005F50E6 /* YAFakeAPIServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAFakeAPIServer.h; sourceTree = "<group>"; };
+		FC583D7D18D18089005F50E6 /* YAFakeAPIServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAFakeAPIServer.m; sourceTree = "<group>"; };
+		FC583D8118D18233005F50E6 /* gist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gist.json; sourceTree = "<group>"; };
+		FC583D8418D18565005F50E6 /* talks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = talks.json; sourceTree = "<group>"; };
+		FC583D8818D186BC005F50E6 /* TCTalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTalk.h; sourceTree = "<group>"; };
+		FC583D8918D186BC005F50E6 /* TCTalk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTalk.m; sourceTree = "<group>"; };
+		FCAD925A18D198BB00FC43A8 /* TCTalkDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTalkDetailViewController.h; sourceTree = "<group>"; };
+		FCAD925B18D198BC00FC43A8 /* TCTalkDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTalkDetailViewController.m; sourceTree = "<group>"; };
+		FCC0259818D1C92400F332E3 /* UIImage+ColorTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorTransformation.h"; sourceTree = "<group>"; };
+		FCC0259918D1C92400F332E3 /* UIImage+ColorTransformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorTransformation.m"; sourceTree = "<group>"; };
+		FCC0259B18D1C92A00F332E3 /* NSObject+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Block.h"; sourceTree = "<group>"; };
+		FCC0259C18D1C92A00F332E3 /* NSObject+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Block.m"; sourceTree = "<group>"; };
 		FCE5501518D1621D0093388D /* TechCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE5501818D1621D0093388D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FCE5501A18D1621D0093388D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -52,13 +101,9 @@
 		FCE5502218D1621D0093388D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FCE5502418D1621D0093388D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FCE5502618D1621D0093388D /* TechCamp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TechCamp-Prefix.pch"; sourceTree = "<group>"; };
-		FCE5502718D1621D0093388D /* TCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCAppDelegate.h; sourceTree = "<group>"; };
-		FCE5502818D1621D0093388D /* TCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCAppDelegate.m; sourceTree = "<group>"; };
+		FCE5502718D1621D0093388D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FCE5502818D1621D0093388D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FCE5502B18D1621D0093388D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FCE5502D18D1621D0093388D /* TCFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCFirstViewController.h; sourceTree = "<group>"; };
-		FCE5502E18D1621D0093388D /* TCFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCFirstViewController.m; sourceTree = "<group>"; };
-		FCE5503018D1621D0093388D /* TCSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCSecondViewController.h; sourceTree = "<group>"; };
-		FCE5503118D1621D0093388D /* TCSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCSecondViewController.m; sourceTree = "<group>"; };
 		FCE5503318D1621D0093388D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FCE5503918D1621D0093388D /* TechCampTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechCampTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE5503A18D1621D0093388D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -81,6 +126,7 @@
 				FCE5501B18D1621D0093388D /* CoreGraphics.framework in Frameworks */,
 				FCE5501D18D1621D0093388D /* UIKit.framework in Frameworks */,
 				FCE5501918D1621D0093388D /* Foundation.framework in Frameworks */,
+				C7CEFBB2C3674E0685B45385 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,13 +143,127 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC583D5718D16B3A005F50E6 /* YAAppSDK */ = {
+			isa = PBXGroup;
+			children = (
+				FC583D7718D17FD8005F50E6 /* Libs */,
+				FC583D5818D16B3A005F50E6 /* APIClient */,
+				FC583D5D18D16B3A005F50E6 /* Domain */,
+				FC583D6218D16B3A005F50E6 /* Utils */,
+				FC583D6B18D16B3A005F50E6 /* YAConstants.h */,
+			);
+			path = YAAppSDK;
+			sourceTree = "<group>";
+		};
+		FC583D5818D16B3A005F50E6 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				FC583D5B18D16B3A005F50E6 /* YAClient.h */,
+				FC583D5C18D16B3A005F50E6 /* YAClient.m */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		FC583D5D18D16B3A005F50E6 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				FC583D5E18D16B3A005F50E6 /* YAObject.h */,
+				FC583D5F18D16B3A005F50E6 /* YAObject.m */,
+				FC583D6018D16B3A005F50E6 /* YAUser.h */,
+				FC583D6118D16B3A005F50E6 /* YAUser.m */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		FC583D6218D16B3A005F50E6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FCC0259B18D1C92A00F332E3 /* NSObject+Block.h */,
+				FCC0259C18D1C92A00F332E3 /* NSObject+Block.m */,
+				FCC0259818D1C92400F332E3 /* UIImage+ColorTransformation.h */,
+				FCC0259918D1C92400F332E3 /* UIImage+ColorTransformation.m */,
+				FC583D6318D16B3A005F50E6 /* NSObject+JSON.h */,
+				FC583D6418D16B3A005F50E6 /* NSObject+JSON.m */,
+				FC583D6518D16B3A005F50E6 /* NSObject+JsonMapping.h */,
+				FC583D6618D16B3A005F50E6 /* NSObject+JsonMapping.m */,
+				FC583D6718D16B3A005F50E6 /* NSObject+Random.h */,
+				FC583D6818D16B3A005F50E6 /* NSObject+Random.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FC583D7718D17FD8005F50E6 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				FC583D7818D17FD8005F50E6 /* ILTesting */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		FC583D7818D17FD8005F50E6 /* ILTesting */ = {
+			isa = PBXGroup;
+			children = (
+				FC583D7918D17FD8005F50E6 /* ILCannedURLProtocol.h */,
+				FC583D7A18D17FD8005F50E6 /* ILCannedURLProtocol.m */,
+			);
+			path = ILTesting;
+			sourceTree = "<group>";
+		};
+		FC583D8018D18233005F50E6 /* ApiJson */ = {
+			isa = PBXGroup;
+			children = (
+				FC583D8418D18565005F50E6 /* talks.json */,
+				FC583D8118D18233005F50E6 /* gist.json */,
+			);
+			path = ApiJson;
+			sourceTree = "<group>";
+		};
+		FC583D8718D185F6005F50E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC583D7418D179CE005F50E6 /* TCClient.h */,
+				FC583D7518D179CE005F50E6 /* TCClient.m */,
+				FC583D8818D186BC005F50E6 /* TCTalk.h */,
+				FC583D8918D186BC005F50E6 /* TCTalk.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FCAD925818D196CF00FC43A8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FCE5505018D165050093388D /* TCTalksViewController.h */,
+				FCE5505118D165050093388D /* TCTalksViewController.m */,
+				FCE5505318D1651D0093388D /* TCActivitiesViewController.h */,
+				FCE5505418D1651D0093388D /* TCActivitiesViewController.m */,
+				FCE5505618D165420093388D /* TCSettingsViewController.h */,
+				FCE5505718D165420093388D /* TCSettingsViewController.m */,
+				FCAD925A18D198BB00FC43A8 /* TCTalkDetailViewController.h */,
+				FCAD925B18D198BC00FC43A8 /* TCTalkDetailViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		FCAD925918D196DE00FC43A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FC583D5118D16762005F50E6 /* TCTalkCell.h */,
+				FC583D5218D16762005F50E6 /* TCTalkCell.m */,
+				FC583D5418D16770005F50E6 /* TCActivityCell.h */,
+				FC583D5518D16770005F50E6 /* TCActivityCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		FCE5500C18D1621D0093388D = {
 			isa = PBXGroup;
 			children = (
+				FC583D5718D16B3A005F50E6 /* YAAppSDK */,
 				FCE5501E18D1621D0093388D /* TechCamp */,
 				FCE5504018D1621D0093388D /* TechCampTests */,
 				FCE5501718D1621D0093388D /* Frameworks */,
 				FCE5501618D1621D0093388D /* Products */,
+				6759C385C25F430C9E0281FE /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +283,7 @@
 				FCE5501A18D1621D0093388D /* CoreGraphics.framework */,
 				FCE5501C18D1621D0093388D /* UIKit.framework */,
 				FCE5503A18D1621D0093388D /* XCTest.framework */,
+				5FE27D87AB4F4DDF8F98DD4F /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -130,25 +291,14 @@
 		FCE5501E18D1621D0093388D /* TechCamp */ = {
 			isa = PBXGroup;
 			children = (
-				FCE5502718D1621D0093388D /* TCAppDelegate.h */,
-				FCE5502818D1621D0093388D /* TCAppDelegate.m */,
+				FCAD925918D196DE00FC43A8 /* View */,
+				FCAD925818D196CF00FC43A8 /* ViewController */,
+				FC583D8718D185F6005F50E6 /* Model */,
+				FCE5502718D1621D0093388D /* AppDelegate.h */,
+				FCE5502818D1621D0093388D /* AppDelegate.m */,
 				FCE5502A18D1621D0093388D /* Main.storyboard */,
-				FCE5502D18D1621D0093388D /* TCFirstViewController.h */,
-				FCE5502E18D1621D0093388D /* TCFirstViewController.m */,
-				FCE5503018D1621D0093388D /* TCSecondViewController.h */,
-				FCE5503118D1621D0093388D /* TCSecondViewController.m */,
 				FCE5503318D1621D0093388D /* Images.xcassets */,
 				FCE5501F18D1621D0093388D /* Supporting Files */,
-				FCE5505018D165050093388D /* TCTalksViewController.h */,
-				FCE5505118D165050093388D /* TCTalksViewController.m */,
-				FCE5505318D1651D0093388D /* TCActivitiesViewController.h */,
-				FCE5505418D1651D0093388D /* TCActivitiesViewController.m */,
-				FCE5505618D165420093388D /* TCSettingsViewController.h */,
-				FCE5505718D165420093388D /* TCSettingsViewController.m */,
-				FC583D5118D16762005F50E6 /* TCTalkCell.h */,
-				FC583D5218D16762005F50E6 /* TCTalkCell.m */,
-				FC583D5418D16770005F50E6 /* TCActivityCell.h */,
-				FC583D5518D16770005F50E6 /* TCActivityCell.m */,
 			);
 			path = TechCamp;
 			sourceTree = "<group>";
@@ -167,6 +317,9 @@
 		FCE5504018D1621D0093388D /* TechCampTests */ = {
 			isa = PBXGroup;
 			children = (
+				FC583D8018D18233005F50E6 /* ApiJson */,
+				FC583D7C18D18089005F50E6 /* YAFakeAPIServer.h */,
+				FC583D7D18D18089005F50E6 /* YAFakeAPIServer.m */,
 				FCE5504618D1621D0093388D /* TechCampTests.m */,
 				FCE5504118D1621D0093388D /* Supporting Files */,
 			);
@@ -189,9 +342,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCE5504A18D1621D0093388D /* Build configuration list for PBXNativeTarget "TechCamp" */;
 			buildPhases = (
+				DF682999848144E1883CB9F1 /* Check Pods Manifest.lock */,
 				FCE5501118D1621D0093388D /* Sources */,
 				FCE5501218D1621D0093388D /* Frameworks */,
 				FCE5501318D1621D0093388D /* Resources */,
+				965CE9D3540D40C297DD9582 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,9 +414,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC583D8218D18233005F50E6 /* gist.json in Resources */,
 				FCE5503418D1621D0093388D /* Images.xcassets in Resources */,
 				FCE5502318D1621D0093388D /* InfoPlist.strings in Resources */,
 				FCE5502C18D1621D0093388D /* Main.storyboard in Resources */,
+				FC583D8518D18565005F50E6 /* talks.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,26 +426,72 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC583D8318D18233005F50E6 /* gist.json in Resources */,
 				FCE5504518D1621D0093388D /* InfoPlist.strings in Resources */,
+				FC583D8618D18565005F50E6 /* talks.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		965CE9D3540D40C297DD9582 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF682999848144E1883CB9F1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FCE5501118D1621D0093388D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC583D7218D16B3A005F50E6 /* NSObject+Random.m in Sources */,
 				FC583D5618D16770005F50E6 /* TCActivityCell.m in Sources */,
 				FCE5505518D1651D0093388D /* TCActivitiesViewController.m in Sources */,
+				FC583D7118D16B3A005F50E6 /* NSObject+JsonMapping.m in Sources */,
 				FCE5505818D165420093388D /* TCSettingsViewController.m in Sources */,
+				FC583D8A18D186BC005F50E6 /* TCTalk.m in Sources */,
 				FC583D5318D16762005F50E6 /* TCTalkCell.m in Sources */,
 				FCE5505218D165050093388D /* TCTalksViewController.m in Sources */,
-				FCE5502F18D1621D0093388D /* TCFirstViewController.m in Sources */,
-				FCE5503218D1621D0093388D /* TCSecondViewController.m in Sources */,
+				FC583D6F18D16B3A005F50E6 /* YAUser.m in Sources */,
+				FCC0259D18D1C92A00F332E3 /* NSObject+Block.m in Sources */,
+				FC583D6E18D16B3A005F50E6 /* YAObject.m in Sources */,
+				FC583D7618D179CE005F50E6 /* TCClient.m in Sources */,
+				FC583D6D18D16B3A005F50E6 /* YAClient.m in Sources */,
 				FCE5502518D1621D0093388D /* main.m in Sources */,
-				FCE5502918D1621D0093388D /* TCAppDelegate.m in Sources */,
+				FCE5502918D1621D0093388D /* AppDelegate.m in Sources */,
+				FC583D7E18D18089005F50E6 /* YAFakeAPIServer.m in Sources */,
+				FC583D7B18D17FD8005F50E6 /* ILCannedURLProtocol.m in Sources */,
+				FCAD925C18D198BC00FC43A8 /* TCTalkDetailViewController.m in Sources */,
+				FC583D7018D16B3A005F50E6 /* NSObject+JSON.m in Sources */,
+				FCC0259A18D1C92400F332E3 /* UIImage+ColorTransformation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +499,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC583D8B18D186BC005F50E6 /* TCTalk.m in Sources */,
 				FCE5504718D1621D0093388D /* TechCampTests.m in Sources */,
+				FC583D7F18D18089005F50E6 /* YAFakeAPIServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +617,7 @@
 		};
 		FCE5504B18D1621D0093388D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6759C385C25F430C9E0281FE /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -426,6 +632,7 @@
 		};
 		FCE5504C18D1621D0093388D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6759C385C25F430C9E0281FE /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
