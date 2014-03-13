@@ -53,7 +53,10 @@
     [self loadCachedTalks];
     [self refreshTalks];
     
-    [self setNeedsStatusBarAppearanceUpdate];
+    if (IS_OS_7_OR_LATER) {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+
 }
 
 

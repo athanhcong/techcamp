@@ -12,8 +12,11 @@
 @implementation TCTalk
 
 + (id)objectFromJson:(id)jsonObject {
-    TCTalk *userParsed = [NSObject objectFromJson:jsonObject forClass:[self class] mappingDictionary:@{@"description": @"talkDescription"}];
-    return userParsed;
+    TCTalk *object = [NSObject objectFromJson:jsonObject forClass:[self class] mappingDictionary:@{@"description": @"talkDescription"}];
+    
+//    object.time = @"10:00 - 11:00";
+//    object.location = @"room 20";
+    return object;
 }
 
 @end

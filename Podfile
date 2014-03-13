@@ -7,3 +7,5 @@ pod 'iOS7Colors'
 pod 'FormatterKit', '~> 1.4'
 
 pod 'TSMessages'
+
+pod 'SVWebViewController', '~> 0.1'

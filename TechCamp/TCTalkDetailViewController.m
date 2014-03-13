@@ -51,7 +51,7 @@
     
     [self.webView loadHTMLString:htmlString baseURL:nil];
     
-    UIColor *tintColor = self.navigationController.navigationBar.barTintColor;
+    UIColor *tintColor = self.navigationController.navigationBar.tintColor;
     
     
     UIButton *voteButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 40)];
@@ -105,13 +105,29 @@
     NSString *htmlString = [NSString stringWithFormat:
                             @"<h2 class='title' style='font-family:HelveticaNeue-CondensedBold;'><font color='#FF3B30'>%@</font></h2>\
                             <p class='name'><font color='gray'><b>%@</b></font></p>\
-                            <hr style = 'background-color:#FF3B30; border-width:0; color:#FF3B30; height:1px; lineheight:0;'/>\
-                            <p class='desciption'><font color='#505050' style='line-height:2em;'>%@</font></p>",
-                            
-                            talk.title, talk.speakerName,talk.talkDescription];
+                            <p class='name'><font color='gray' style='font-size:0.8em;line-height:0.8em;'>%@ votes, %@ favorites</font></p>\
+                            ",
+                            talk.title, talk.speakerName, talk.voteCount, talk.favCount];
     
     
-    htmlString = [NSString stringWithFormat:@"<body style='font-size:16px;font-family:HelveticaNeue;'>%@</body>", htmlString];
+    if (talk.time) {
+        htmlString = [htmlString stringByAppendingFormat:
+                      @"<p class='name'><font color='gray' style='font-size:0.8em;line-height:0.8em;'><b>Time: </b>%@</font></p>", talk.time];
+    }
+
+    if (talk.location) {
+        htmlString = [htmlString stringByAppendingFormat:
+                      @"<p class='name'><font color='gray' style='font-size:0.8em;line-height:0.8em;'><b>Location: </b>%@</font></p>", talk.location];
+    }
+    
+    NSString *descriptionString = [NSString stringWithFormat:
+                            @"<hr style = 'background-color:#FF3B30; border-width:0; color:#FF3B30; height:1px; lineheight:0;'/>\
+                            <p class='desciption'><font color='#181818' style='line-height:2em;'>%@</font></p>\
+                            <h3>Speaker</h3>\
+                            <p><font color='#181818' style='line-height:2em;'>%@</font></p>",
+                            talk.talkDescription, talk.speakerDescription];
+        
+    htmlString = [NSString stringWithFormat:@"<html><body style='font-size:16px;font-family:HelveticaNeue;'>%@%@<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></body></html>", htmlString, descriptionString];
     
     return htmlString;
 
@@ -138,6 +154,12 @@
 }
 
 - (void)favButtonPressed:(id)sender {
+    
+//    if ([NSDate date] compare:[NSDate dateWithTimeIntervalSinceReferenceDate:<#(NSTimeInterval)#>]) {
+//        <#statements#>
+//    }
+    
+    
     self.favoriteButton.enabled = NO;
     
     [[TCClient defaultClient] favoriteWithTopicID:_talk.talkID block:^(id object, NSError *error) {
@@ -158,17 +180,33 @@
 
 
 - (void)showMessage:(NSString *)message type:(TSMessageNotificationType)type {
-    [TSMessage showNotificationInViewController:self
-                                          title:message
-                                       subtitle:nil
-                                          image:nil
-                                           type:type
-                                       duration:TSMessageNotificationDurationAutomatic
-                                       callback:NULL
-                                    buttonTitle:nil
-                                 buttonCallback:nil
-                                     atPosition:TSMessageNotificationPositionTop
-                           canBeDismissedByUser:YES];
+    
+    // Temporary fix for iOS6
+    if (IS_OS_7_OR_LATER) {
+        [TSMessage showNotificationInViewController:self
+                                              title:message
+                                           subtitle:nil
+                                              image:nil
+                                               type:type
+                                           duration:TSMessageNotificationDurationAutomatic
+                                           callback:NULL
+                                        buttonTitle:nil
+                                     buttonCallback:nil
+                                         atPosition:TSMessageNotificationPositionTop
+                               canBeDismissedByUser:YES];
+    } else {
+        [TSMessage showNotificationInViewController:self
+                                              title:message
+                                           subtitle:nil
+                                              image:nil
+                                               type:type
+                                           duration:TSMessageNotificationDurationAutomatic
+                                           callback:NULL
+                                        buttonTitle:nil
+                                     buttonCallback:nil
+                                         atPosition:TSMessageNotificationPositionBottom
+                               canBeDismissedByUser:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning

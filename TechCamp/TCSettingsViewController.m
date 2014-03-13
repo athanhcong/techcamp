@@ -7,8 +7,21 @@
 //
 
 #import "TCSettingsViewController.h"
+#import <SVWebViewController/SVWebViewController.h>
 
-@interface TCSettingsViewController ()
+
+static NSString *const scheduleLink = @"https://docs.google.com/spreadsheet/ccc?key=0ApUi9j7RVQB_dDViUTR2dF9QQkFEaFgzM3VoWlU0T3c#gid=0";
+
+static NSString *const webLink = @"http://techcamp.vn/";
+
+static NSString *const youtubeLink = @"http://www.youtube.com/playlist?list=PLUUDeNs_EpClPwK-PiTtsoN2Z-drkmoSV";
+
+static NSString *const facebookLink = @"https://www.facebook.com/techcampsaigon";
+
+
+static NSString *const contactEmail = @"barcamp@barcampsaigon.com";
+
+@interface TCSettingsViewController () <MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
 
 @end
 
@@ -66,6 +79,39 @@
 //    return cell;
 //}
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        SVWebViewController *webViewController = [[SVWebViewController alloc] initWithAddress:scheduleLink];
+        
+        webViewController.title = @"Loading schedule...";
+        [self.navigationController pushViewController:webViewController animated:YES];
+        
+//        self.navigationController.toolbarHidden = YES;
+
+    } else if (indexPath.section == 1) {
+        
+        NSString *link = nil;
+        switch (indexPath.row) {
+            case 1:
+                link = youtubeLink;
+                break;
+            case 2:
+                link = facebookLink;
+                break;
+            default:
+                link = webLink;
+                break;
+        }
+        SVModalWebViewController *webViewController = [[SVModalWebViewController alloc] initWithAddress:link];
+        
+        webViewController.barsTintColor = [[UINavigationBar appearance] tintColor];
+        [self presentViewController:webViewController animated:YES completion:NULL];
+    } else if (indexPath.section == 2) {
+        [self sendMail:@"Feedback for Techcamp 2014" message:nil to:@[contactEmail]];
+    }
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -116,5 +162,31 @@
 }
 
  */
+
+
+
+- (void)sendMail:(NSString *)subject message:(NSString *)body to:(NSArray *)recipients {
+    if ([MFMailComposeViewController canSendMail] == NO) {
+        return;
+    }
+    
+    MFMailComposeViewController *messageInstance = [[MFMailComposeViewController alloc] init];
+    
+    [messageInstance setSubject:subject];
+    [messageInstance setToRecipients:recipients];
+    [messageInstance setMessageBody:body isHTML:NO];
+    messageInstance.mailComposeDelegate = self;
+ 
+    
+    messageInstance.navigationBar.tintColor = [[UINavigationBar appearance] tintColor];
+    [self presentViewController:messageInstance animated:YES completion:NULL];
+}
+
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+    [controller dismissViewControllerAnimated:YES completion:NULL];
+
+}
+
 
 @end

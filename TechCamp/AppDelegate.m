@@ -63,18 +63,25 @@
     
 //    UIColor *techcampTintColor = [[[TTTColorFormatter alloc] init] colorFromHexadecimalString:@"db4f4f"];
     
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    UIColor *barTintColor = [[[TTTColorFormatter alloc] init] colorFromHexadecimalString:@"FF1300"];
-    //FF1300
-    UIColor *tintColor = [UIColor whiteColor];
-
-    [[UINavigationBar appearance] setBarTintColor:barTintColor];
-    [[UINavigationBar appearance] setTintColor:tintColor];
-
-    [[UINavigationBar appearance] setTitleTextAttributes:@{UITextAttributeTextColor: tintColor}];
+    if (IS_OS_7_OR_LATER) {
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+        
+        UIColor *barTintColor = [[[TTTColorFormatter alloc] init] colorFromHexadecimalString:@"FF1300"];
+        //FF1300
+        UIColor *tintColor = [UIColor whiteColor];
+        
+        [[UINavigationBar appearance] setBarTintColor:barTintColor];
+        [[UINavigationBar appearance] setTintColor:tintColor];
+        
+        [[UIToolbar appearance] setBarTintColor:barTintColor];
+        [[UIToolbar appearance] setTintColor:tintColor];
+        
+        [[UINavigationBar appearance] setTitleTextAttributes:@{UITextAttributeTextColor: tintColor}];
+        
+        self.window.tintColor = barTintColor;
+    }
     
-    self.window.tintColor = barTintColor;
     
 }
 
