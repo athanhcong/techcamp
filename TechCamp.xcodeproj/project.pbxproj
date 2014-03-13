@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC583D5318D16762005F50E6 /* TCTalkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D5218D16762005F50E6 /* TCTalkCell.m */; };
+		FC583D5618D16770005F50E6 /* TCActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D5518D16770005F50E6 /* TCActivityCell.m */; };
 		FCE5501918D1621D0093388D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE5501818D1621D0093388D /* Foundation.framework */; };
 		FCE5501B18D1621D0093388D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE5501A18D1621D0093388D /* CoreGraphics.framework */; };
 		FCE5501D18D1621D0093388D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE5501C18D1621D0093388D /* UIKit.framework */; };
@@ -22,6 +24,9 @@
 		FCE5503D18D1621D0093388D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE5501C18D1621D0093388D /* UIKit.framework */; };
 		FCE5504518D1621D0093388D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCE5504318D1621D0093388D /* InfoPlist.strings */; };
 		FCE5504718D1621D0093388D /* TechCampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE5504618D1621D0093388D /* TechCampTests.m */; };
+		FCE5505218D165050093388D /* TCTalksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE5505118D165050093388D /* TCTalksViewController.m */; };
+		FCE5505518D1651D0093388D /* TCActivitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE5505418D1651D0093388D /* TCActivitiesViewController.m */; };
+		FCE5505818D165420093388D /* TCSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE5505718D165420093388D /* TCSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC583D5118D16762005F50E6 /* TCTalkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTalkCell.h; sourceTree = "<group>"; };
+		FC583D5218D16762005F50E6 /* TCTalkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTalkCell.m; sourceTree = "<group>"; };
+		FC583D5418D16770005F50E6 /* TCActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCActivityCell.h; sourceTree = "<group>"; };
+		FC583D5518D16770005F50E6 /* TCActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCActivityCell.m; sourceTree = "<group>"; };
 		FCE5501518D1621D0093388D /* TechCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE5501818D1621D0093388D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FCE5501A18D1621D0093388D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -56,6 +65,12 @@
 		FCE5504218D1621D0093388D /* TechCampTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TechCampTests-Info.plist"; sourceTree = "<group>"; };
 		FCE5504418D1621D0093388D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FCE5504618D1621D0093388D /* TechCampTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TechCampTests.m; sourceTree = "<group>"; };
+		FCE5505018D165050093388D /* TCTalksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTalksViewController.h; sourceTree = "<group>"; };
+		FCE5505118D165050093388D /* TCTalksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTalksViewController.m; sourceTree = "<group>"; };
+		FCE5505318D1651D0093388D /* TCActivitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCActivitiesViewController.h; sourceTree = "<group>"; };
+		FCE5505418D1651D0093388D /* TCActivitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCActivitiesViewController.m; sourceTree = "<group>"; };
+		FCE5505618D165420093388D /* TCSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCSettingsViewController.h; sourceTree = "<group>"; };
+		FCE5505718D165420093388D /* TCSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +139,16 @@
 				FCE5503118D1621D0093388D /* TCSecondViewController.m */,
 				FCE5503318D1621D0093388D /* Images.xcassets */,
 				FCE5501F18D1621D0093388D /* Supporting Files */,
+				FCE5505018D165050093388D /* TCTalksViewController.h */,
+				FCE5505118D165050093388D /* TCTalksViewController.m */,
+				FCE5505318D1651D0093388D /* TCActivitiesViewController.h */,
+				FCE5505418D1651D0093388D /* TCActivitiesViewController.m */,
+				FCE5505618D165420093388D /* TCSettingsViewController.h */,
+				FCE5505718D165420093388D /* TCSettingsViewController.m */,
+				FC583D5118D16762005F50E6 /* TCTalkCell.h */,
+				FC583D5218D16762005F50E6 /* TCTalkCell.m */,
+				FC583D5418D16770005F50E6 /* TCActivityCell.h */,
+				FC583D5518D16770005F50E6 /* TCActivityCell.m */,
 			);
 			path = TechCamp;
 			sourceTree = "<group>";
@@ -255,6 +280,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC583D5618D16770005F50E6 /* TCActivityCell.m in Sources */,
+				FCE5505518D1651D0093388D /* TCActivitiesViewController.m in Sources */,
+				FCE5505818D165420093388D /* TCSettingsViewController.m in Sources */,
+				FC583D5318D16762005F50E6 /* TCTalkCell.m in Sources */,
+				FCE5505218D165050093388D /* TCTalksViewController.m in Sources */,
 				FCE5502F18D1621D0093388D /* TCFirstViewController.m in Sources */,
 				FCE5503218D1621D0093388D /* TCSecondViewController.m in Sources */,
 				FCE5502518D1621D0093388D /* main.m in Sources */,
@@ -388,6 +418,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TechCamp/TechCamp-Prefix.pch";
 				INFOPLIST_FILE = "TechCamp/TechCamp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -401,6 +432,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TechCamp/TechCamp-Prefix.pch";
 				INFOPLIST_FILE = "TechCamp/TechCamp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -467,6 +499,7 @@
 				FCE5504C18D1621D0093388D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCE5504D18D1621D0093388D /* Build configuration list for PBXNativeTarget "TechCampTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +508,7 @@
 				FCE5504F18D1621D0093388D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
