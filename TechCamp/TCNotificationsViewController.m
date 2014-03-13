@@ -6,13 +6,15 @@
 //  Copyright (c) 2014 TechCamp. All rights reserved.
 //
 
-#import "TCActivitiesViewController.h"
+#import "TCNotificationsViewController.h"
+#import <UIAlertView+Blocks/UIAlertView+Blocks.h>
+#import "TCNotificationCell.h"
 
-@interface TCActivitiesViewController ()
+@interface TCNotificationsViewController ()
 
 @end
 
-@implementation TCActivitiesViewController
+@implementation TCNotificationsViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,11 +29,31 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshNotifications) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = self.refreshControl;
+    
+    
+    [self loadCachedNotification];
+    [self refreshNotifications];
+
+}
+
+- (void)refreshNotifications {
+    [[TCClient defaultClient] getNotificationsWithBlock:^(NSArray *objects, NSError *error) {
+        if (objects && !error) {
+            [self loadCachedNotification];
+            [self.refreshControl endRefreshing];
+        } else {
+            [UIAlertView showWithTitle:@"Oops" message:@"Refresh Talks got error! Please try again later." cancelButtonTitle:@"OK" otherButtonTitles:nil tapBlock:NULL];
+        }
+    }];
+}
+
+
+- (void)loadCachedNotification {
+    self.notifications = [[TCClient defaultClient] cachedNotifications];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,24 +66,26 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     // Return the number of rows in the section.
-    return 0;
+//    return 0;
+    return _notifications.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"TCNotificationCell";
+    TCNotificationCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    
+    TCNotification *notificaton = [_notifications objectAtIndex:indexPath.row];
+    
+    [cell updateViewWithNotification:notificaton];
     
     return cell;
 }

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TCActivitiesViewController : UITableViewController
+@interface TCNotificationsViewController : UITableViewController
+
+@property (nonatomic, strong) NSArray *notifications;
 
 @end

@@ -9,6 +9,7 @@
 #import "TCClient.h"
 #import <TMCache/TMCache.h>
 #import "TCTalk.h"
+#import "TCNotification.h"
 
 
 
@@ -124,27 +125,46 @@
     
 }
 
+
+
+- (NSArray *)notificationsFromJson:(id)json {
+    
+    NSMutableArray *notifications = [NSMutableArray array];
+    for (NSDictionary *notificationJson in json) {
+        TCNotification *notification = [TCNotification objectFromJson:notificationJson];
+        
+        [notifications addObject:notification];
+    }
+    
+    
+    [notifications sortUsingComparator:^NSComparisonResult(TCNotification *obj1, TCNotification *obj2) {
+        return [obj2.createdAt compare:obj1.createdAt];
+    }];
+    
+    return notifications;
+}
+
 - (id)cachedNotifications {
-    NSString *urlPath = [NSString stringWithFormat:@"/voting/topic/api?device_id=%@", [self deviceId]];
+    NSString *urlPath = [NSString stringWithFormat:@"/voting/notification/list"];
     
     id json = [[TMCache sharedCache] objectForKey:urlPath];
-    NSArray *talks = [self talksFromJson:json];
+    NSArray *notifications = [self notificationsFromJson:json];
     
-    return talks;
+    return notifications;
 }
 
 - (void)getNotificationsWithBlock:(YAArrayResultBlock)block {
-    NSString *urlPath = [NSString stringWithFormat:@"/voting/topic/api?device_id=%@", [self deviceId]];
+    NSString *urlPath = [NSString stringWithFormat:@"/voting/notification/list"];
     
     [self getJsonWithPath:urlPath params:nil block:^(id object, NSError *error) {
         
-        NSArray *talks = nil;
+        NSArray *notifications = nil;
         if (object && !error) {
             [[TMCache sharedCache] setObject:object forKey:urlPath];
-            talks = [self talksFromJson:object];
+            notifications = [self notificationsFromJson:object];
         }
         
-        block(talks, error);
+        block(notifications, error);
     }];
 }
 

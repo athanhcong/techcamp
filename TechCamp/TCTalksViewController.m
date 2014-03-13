@@ -53,7 +53,6 @@
     [self loadCachedTalks];
     [self refreshTalks];
     
-    
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
