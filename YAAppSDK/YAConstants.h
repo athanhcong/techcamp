@@ -48,3 +48,6 @@ typedef void (^ObjectResultBlock)(id object, NSError *error);
 #       define DLogObj(f)
 
 #endif
+
+
+#define kInstallationDeviceToken @"kInstallationDeviceToken"

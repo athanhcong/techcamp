@@ -9,6 +9,8 @@
 #import "YAPushNotificationService.h"
 #import "NSObject+JSON.h"
 
+#import "TCClient.h"
+
 @implementation YAPushNotificationService
 
 + (id)sharedService {
@@ -25,18 +27,8 @@
     self = [super init];
     
     if (self) {
-        NSNTFo(self, @selector(userDidLogin:), kAuthenticationLoggedIn);
-        NSNTFo(self, @selector(userDidLogout:), kAuthenticationLoggedOut);
     }
     return self;
-}
-
-- (void)userDidLogin:(NSNotification *)notification {
-    [self setupNotification];
-}
-
-- (void)userDidLogout:(NSNotification *)notification {
-    [self removePushNotification];
 }
 
 #pragma mark Registering
@@ -48,20 +40,20 @@
 
 - (void)removePushNotification {
     
-    NSString *deviceToken = [NSDEF objectForKey:kInstallationDeviceToken];
-    
-    if (deviceToken == nil) {
-        return;
-    }
-    
-    [[ALClient defaultClient] postInstallationWithDeviceToken:deviceToken userID:nil block:^(id object, NSError *error) {
-        
-        if (error == nil && object) {
-            DLog(@"finished remove device token for user");
-            [NSDEF removeObjectForKey:kInstallationDeviceToken];
-            [NSDEF synchronize];
-        }
-    }];
+//    NSString *deviceToken = [NSDEF objectForKey:kInstallationDeviceToken];
+//
+//    if (deviceToken == nil) {
+//        return;
+//    }
+//    
+//    [[TCClient defaultClient] registerPushWithDeviceToken:deviceToken block:^(id object, NSError *error) {
+//        
+//        if (error == nil && object) {
+//            DLog(@"finished remove device token for user");
+//            [NSDEF removeObjectForKey:kInstallationDeviceToken];
+//            [NSDEF synchronize];
+//        }
+//    }];
 }
 
 
@@ -76,10 +68,8 @@
         [self createAlert:launchOptions];
     }
     
-    if ([ALClient isAuthenticated] && ![NSDEF objectForKey:kInstallationDeviceToken]) {
+    if (![NSDEF objectForKey:kInstallationDeviceToken]) {
         [self setupNotification];
-    } else if (![ALClient isAuthenticated] && [NSDEF objectForKey:kInstallationDeviceToken]) {
-        [self removePushNotification];
     }
     return YES;
 }
@@ -91,18 +81,14 @@
     
     NSLog(@"deviceToken: %@", deviceToken);
     
-    if ([ALClient isAuthenticated]) {
-        [[ALClient defaultClient] postInstallationWithDeviceToken:deviceToken userID:[ALClient authenticatedUserID] block:^(id object, NSError *error) {
-            
-            if (error == nil && object) {
-                DLog(@"finished registering device token");
-                [NSDEF setObject:deviceToken forKey:kInstallationDeviceToken];
-                [NSDEF synchronize];
-            }
-            
-        }];
+    [[TCClient defaultClient] registerPushWithDeviceToken:deviceToken block:^(id object, NSError *error) {
         
-    }
+        if (error == nil && object) {
+            DLog(@"finished registering device token");
+            [NSDEF setObject:deviceToken forKey:kInstallationDeviceToken];
+            [NSDEF synchronize];
+        }
+    }];
 }
 
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error {
@@ -127,7 +113,7 @@
     NSString *alert = [data objectForKey:@"alert"];
     
     if (alert) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Apo" message:[NSString stringWithFormat:@"%@", alert] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"TechCamp" message:[NSString stringWithFormat:@"%@", alert] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
     }
     

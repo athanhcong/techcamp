@@ -66,8 +66,8 @@
 		FC1EDBC118D20BE100D3CA57 /* TCNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCNotification.m; sourceTree = "<group>"; };
 		FC1EDBC318D2118C00D3CA57 /* TCNotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCNotificationCell.h; sourceTree = "<group>"; };
 		FC1EDBC418D2118C00D3CA57 /* TCNotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCNotificationCell.m; sourceTree = "<group>"; };
-		FC1EDBC618D2153600D3CA57 /* YAPushNotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAPushNotificationService.h; sourceTree = "<group>"; };
-		FC1EDBC718D2153600D3CA57 /* YAPushNotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAPushNotificationService.m; sourceTree = "<group>"; };
+		FC1EDBC618D2153600D3CA57 /* YAPushNotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YAPushNotificationService.h; path = ../YAAppSDK/APIClient/YAPushNotificationService.h; sourceTree = "<group>"; };
+		FC1EDBC718D2153600D3CA57 /* YAPushNotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YAPushNotificationService.m; path = ../YAAppSDK/APIClient/YAPushNotificationService.m; sourceTree = "<group>"; };
 		FC583D5118D16762005F50E6 /* TCTalkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTalkCell.h; sourceTree = "<group>"; };
 		FC583D5218D16762005F50E6 /* TCTalkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTalkCell.m; sourceTree = "<group>"; };
 		FC583D5B18D16B3A005F50E6 /* YAClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAClient.h; sourceTree = "<group>"; };
@@ -166,8 +166,6 @@
 			children = (
 				FC583D5B18D16B3A005F50E6 /* YAClient.h */,
 				FC583D5C18D16B3A005F50E6 /* YAClient.m */,
-				FC1EDBC618D2153600D3CA57 /* YAPushNotificationService.h */,
-				FC1EDBC718D2153600D3CA57 /* YAPushNotificationService.m */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -235,6 +233,8 @@
 				FC583D8918D186BC005F50E6 /* TCTalk.m */,
 				FC1EDBC018D20BE100D3CA57 /* TCNotification.h */,
 				FC1EDBC118D20BE100D3CA57 /* TCNotification.m */,
+				FC1EDBC618D2153600D3CA57 /* YAPushNotificationService.h */,
+				FC1EDBC718D2153600D3CA57 /* YAPushNotificationService.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -395,6 +395,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = TechCamp;
 				TargetAttributes = {
+					FCE5501418D1621D0093388D = {
+						DevelopmentTeam = JQE7U32U37;
+					};
 					FCE5503818D1621D0093388D = {
 						TestTargetID = FCE5501418D1621D0093388D;
 					};
@@ -633,11 +636,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TechCamp/TechCamp-Prefix.pch";
 				INFOPLIST_FILE = "TechCamp/TechCamp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0ED432B4-31BC-4CDF-9518-EC8C32527116";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -648,11 +654,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TechCamp/TechCamp-Prefix.pch";
 				INFOPLIST_FILE = "TechCamp/TechCamp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0ED432B4-31BC-4CDF-9518-EC8C32527116";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

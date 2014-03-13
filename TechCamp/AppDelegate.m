@@ -13,6 +13,8 @@
 
 #import "YAFakeAPIServer.h"
 
+#import "YAPushNotificationService.h"
+
 
 @implementation AppDelegate
 
@@ -23,6 +25,9 @@
 //    [YAFakeAPIServer registerFakeServerWithHost:SERVER_API_HOST];
 
     [self setupAppearance];
+    
+    [[YAPushNotificationService sharedService] application:application didFinishLaunchingWithOptions:launchOptions];
+    
     return YES;
 }
 							
@@ -71,6 +76,23 @@
     
     self.window.tintColor = barTintColor;
     
+}
+
+
+#pragma mark Push Notification
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceTokenData {
+    
+    [[YAPushNotificationService sharedService] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceTokenData];
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error{
+	[[YAPushNotificationService sharedService] application:application didFailToRegisterForRemoteNotificationsWithError:error];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    
+    [[YAPushNotificationService sharedService] application:application didReceiveRemoteNotification:userInfo];
 }
 
 

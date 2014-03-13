@@ -122,7 +122,22 @@
 
 
 - (void)registerPushWithDeviceToken:(NSString *)deviceToken block:(YAIdResultBlock)block {
+    if (!deviceToken) {
+        return;
+    }
     
+    NSString *urlPath = [NSString stringWithFormat:@"/voting/notification/register"];
+    
+    NSDictionary *params = @{@"device_token": deviceToken, @"platform": @"iOS"};
+    
+    [self postJsonWithPath:urlPath params:params block:^(id object, NSError *error) {
+        
+        if (error == nil && object != nil ) {
+            
+        }
+        
+        if (block) block(object, error);
+    }];
 }
 
 

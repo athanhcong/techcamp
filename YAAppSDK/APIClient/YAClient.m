@@ -104,7 +104,7 @@ static NSString *YAUserIDKey = @"YAUserIDKey";
 
     DLogObj(urlString);
     [manager GET:urlString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        DLogObj(responseObject);
+//        DLogObj(responseObject);
         block(responseObject, nil);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
