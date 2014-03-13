@@ -17,4 +17,17 @@
 - (id)cachedTalks;
 - (void)getTalksWithBlock:(YAArrayResultBlock)block;
 
+
+
+- (void)voteWithTopicID:(NSString *)topicID block:(YAIdResultBlock)block;
+- (void)favoriteWithTopicID:(NSString *)topicID block:(YAIdResultBlock)block;
+
+
+
+- (void)registerPushWithDeviceToken:(NSString *)deviceToken block:(YAIdResultBlock)block;
+
+- (id)cachedNotifications;
+- (void)getNotificationsWithBlock:(YAArrayResultBlock)block;
+
+
 @end

@@ -20,7 +20,7 @@
 {
     // Override point for customization after application launch.
     
-    [YAFakeAPIServer registerFakeServerWithHost:SERVER_API_HOST];
+//    [YAFakeAPIServer registerFakeServerWithHost:SERVER_API_HOST];
 
     [self setupAppearance];
     return YES;

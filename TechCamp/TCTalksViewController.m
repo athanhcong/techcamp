@@ -45,8 +45,16 @@
     [self.refreshControl addTarget:self action:@selector(refreshTalks) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = self.refreshControl;
     
+    
+//    self.searchDisplayController.searchBar.barTintColor = [[UINavigationBar appearance] barTintColor];
+//    self.searchDisplayController.searchBar.tintColor = [[UINavigationBar appearance] tintColor];
+//    self.searchDisplayController.searchBar.translucent = NO;
+    
     [self loadCachedTalks];
     [self refreshTalks];
+    
+    
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 
@@ -227,6 +235,10 @@
                                                      selectedScopeButtonIndex]]];
     
     return YES;
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 @end

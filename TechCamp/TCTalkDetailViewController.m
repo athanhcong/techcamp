@@ -9,7 +9,12 @@
 #import "TCTalkDetailViewController.h"
 #import "UIImage+ColorTransformation.h"
 
+#import <TSMessages/TSMessage.h>
+
 @interface TCTalkDetailViewController ()
+
+
+@property (nonatomic, strong) UIButton *voteButton, *favoriteButton;
 
 @end
 
@@ -50,7 +55,8 @@
     
     
     UIButton *voteButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 40)];
-    
+
+    [voteButton addTarget:self action:@selector(voteButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     if (_talk.voted) {
         [voteButton setTitle:@"Voted" forState:UIControlStateNormal];
         voteButton.enabled = NO;
@@ -66,6 +72,7 @@
     
     
     UIButton *favButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+    [favButton addTarget:self action:@selector(favButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
     if (_talk.voted) {
         [favButton setTitle:@"Favorited" forState:UIControlStateNormal];
@@ -86,6 +93,10 @@
                           [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
                           favButtonItem];
     
+    
+    self.voteButton = voteButton;
+    self.favoriteButton = favButton;
+    
     self.title = _talk.speakerName;
 }
 
@@ -104,6 +115,60 @@
     
     return htmlString;
 
+}
+
+
+- (void)voteButtonPressed:(id)sender {
+    self.voteButton.enabled = NO;
+    
+    [[TCClient defaultClient] voteWithTopicID:_talk.talkID block:^(id object, NSError *error) {
+        
+        
+        if (object && !error) {
+            if ([[object objectForKey:@"status"] isEqualToString:@"Success"]) {
+                [self showMessage:@"Voted!" type:TSMessageNotificationTypeError];
+            } else {
+                [self showMessage:@"Error!" type:TSMessageNotificationTypeError];
+            }
+        } else {
+            [self showMessage:@"Error!" type:TSMessageNotificationTypeError];
+        }
+
+    }];
+}
+
+- (void)favButtonPressed:(id)sender {
+    self.favoriteButton.enabled = NO;
+    
+    [[TCClient defaultClient] favoriteWithTopicID:_talk.talkID block:^(id object, NSError *error) {
+        
+        
+        if (object && !error) {
+            if ([[object objectForKey:@"status"] isEqualToString:@"Success"]) {
+                [self showMessage:@"Favorited!" type:TSMessageNotificationTypeSuccess];
+            } else {
+                [self showMessage:@"Error!" type:TSMessageNotificationTypeError];
+            }
+        } else {
+            [self showMessage:@"Error!" type:TSMessageNotificationTypeError];
+        }
+        
+    }];
+}
+
+
+- (void)showMessage:(NSString *)message type:(TSMessageNotificationType)type {
+    [TSMessage showNotificationInViewController:self
+                                          title:message
+                                       subtitle:nil
+                                          image:nil
+                                           type:type
+                                       duration:TSMessageNotificationDurationAutomatic
+                                       callback:NULL
+                                    buttonTitle:nil
+                                 buttonCallback:nil
+                                     atPosition:TSMessageNotificationPositionTop
+                           canBeDismissedByUser:YES];
 }
 
 - (void)didReceiveMemoryWarning

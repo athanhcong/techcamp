@@ -291,9 +291,9 @@
 		FCE5501E18D1621D0093388D /* TechCamp */ = {
 			isa = PBXGroup;
 			children = (
+				FC583D8718D185F6005F50E6 /* Model */,
 				FCAD925918D196DE00FC43A8 /* View */,
 				FCAD925818D196CF00FC43A8 /* ViewController */,
-				FC583D8718D185F6005F50E6 /* Model */,
 				FCE5502718D1621D0093388D /* AppDelegate.h */,
 				FCE5502818D1621D0093388D /* AppDelegate.m */,
 				FCE5502A18D1621D0093388D /* Main.storyboard */,

@@ -5,3 +5,5 @@ pod 'TMCache', '~> 1.2.0'
 pod 'UIAlertView+Blocks', '~> 0.7'
 pod 'iOS7Colors'
 pod 'FormatterKit', '~> 1.4'
+
+pod 'TSMessages'
