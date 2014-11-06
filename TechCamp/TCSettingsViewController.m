@@ -12,11 +12,17 @@
 
 static NSString *const scheduleLink = @"https://docs.google.com/spreadsheet/ccc?key=0ApUi9j7RVQB_dDViUTR2dF9QQkFEaFgzM3VoWlU0T3c#gid=0";
 
+//static NSString *const scheduleLink = @"https://docs.google.com/spreadsheet/pub?key=0ApUi9j7RVQB_dG9QbWdTd2d0d3lWb1JsUUk4SU9qZUE&output=html";
+
 static NSString *const webLink = @"http://techcamp.vn/";
 
 static NSString *const youtubeLink = @"http://www.youtube.com/playlist?list=PLUUDeNs_EpClPwK-PiTtsoN2Z-drkmoSV";
 
 static NSString *const facebookLink = @"https://www.facebook.com/techcampsaigon";
+
+static NSString *const facebookAppLink = @"fb://profile/161773950698676";
+
+
 
 
 static NSString *const contactEmail = @"barcamp@barcampsaigon.com";
@@ -96,17 +102,28 @@ static NSString *const contactEmail = @"barcamp@barcampsaigon.com";
             case 1:
                 link = youtubeLink;
                 break;
-            case 2:
-                link = facebookLink;
-                break;
+            case 2: {
+                BOOL isInstalled = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"fb://"]];
+                
+                if (isInstalled) {
+                    NSURL *urlApp = [NSURL URLWithString:facebookAppLink];
+                    [[UIApplication sharedApplication] openURL:urlApp];
+                } else {
+                    link = facebookLink;
+                }
+                
+            } break;
             default:
                 link = webLink;
                 break;
         }
-        SVModalWebViewController *webViewController = [[SVModalWebViewController alloc] initWithAddress:link];
         
-        webViewController.barsTintColor = [[UINavigationBar appearance] tintColor];
-        [self presentViewController:webViewController animated:YES completion:NULL];
+        if (link) {
+            SVModalWebViewController *webViewController = [[SVModalWebViewController alloc] initWithAddress:link];
+            
+            webViewController.barsTintColor = [[UINavigationBar appearance] tintColor];
+            [self presentViewController:webViewController animated:YES completion:NULL];
+        }
     } else if (indexPath.section == 2) {
         [self sendMail:@"Feedback for Techcamp 2014" message:nil to:@[contactEmail]];
     }

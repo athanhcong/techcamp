@@ -49,7 +49,12 @@
     
     [_voteButton setTitle:[NSString stringWithFormat:@"%@ votes", _talk.voteCount] forState:UIControlStateNormal];
     
-    [_favoriteButton setTitle:[NSString stringWithFormat:@"%@ favorites", _talk.favCount] forState:UIControlStateNormal];
+    if ([_talk.favCount intValue] > 0) {
+        _favoriteButton.hidden = NO;
+        [_favoriteButton setTitle:[NSString stringWithFormat:@"%@ favorites", _talk.favCount] forState:UIControlStateNormal];
+    } else {
+        _favoriteButton.hidden = YES;
+    }
 }
 
 @end

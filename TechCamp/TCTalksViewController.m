@@ -13,10 +13,19 @@
 
 #import "TCTalkDetailViewController.h"
 
+#import "NSObject+Random.h"
+typedef enum {
+  SortByCreatedAt,
+  SortByVote,
+  SortByFavorite,
+  SortByRandom
+} SortType;
 
-@interface TCTalksViewController ()
+@interface TCTalksViewController () <UIActionSheetDelegate>
 
 @property (nonatomic, strong) NSMutableArray *searchResults;
+
+@property (nonatomic, assign) SortType sortType;
 
 @end
 
@@ -55,8 +64,17 @@
     
     if (IS_OS_7_OR_LATER) {
         [self setNeedsStatusBarAppearanceUpdate];
-    }
+        
+        UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"techcamp_logo"]];
+        [tempImageView setFrame:self.tableView.frame];
+        [tempImageView setContentMode:UIViewContentModeScaleAspectFit];
+        self.tableView.backgroundView = tempImageView;
 
+    }
+    
+    
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sort" style:UIBarButtonItemStyleBordered target:self action:@selector(showSortOption)];
 }
 
 
@@ -74,6 +92,8 @@
 
 - (void)loadCachedTalks {
     self.talks = [[TCClient defaultClient] cachedTalks];
+    
+    [self sortBy:self.sortType];
     [self.tableView reloadData];
 }
 
@@ -243,4 +263,49 @@
     return UIStatusBarStyleLightContent;
 }
 
+
+- (void)showSortOption {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Sort by Submit Date", @"Sort by Vote", @"Sort by Favorite", @"Randomize", nil];
+    
+    [actionSheet showFromTabBar:self.tabBarController.tabBar];
+}
+
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex != actionSheet.cancelButtonIndex) {
+        [self sortBy:buttonIndex];
+        [self.tableView reloadData];
+
+    }
+}
+
+
+- (void)sortBy:(SortType)sortType {
+    
+    self.sortType = sortType;
+    
+    switch (sortType) {
+        case SortByCreatedAt: {
+            self.talks = [_talks sortedArrayUsingComparator:^NSComparisonResult(TCTalk *obj1, TCTalk *obj2) {
+                return [obj2.createdAt compare:obj1.createdAt];
+            }];
+        } break;
+        case SortByVote: {
+            self.talks = [_talks sortedArrayUsingComparator:^NSComparisonResult(TCTalk *obj1, TCTalk *obj2) {
+                return [obj2.voteCount compare:obj1.voteCount];
+            }];
+        } break;
+        case SortByFavorite: {
+            self.talks = [_talks sortedArrayUsingComparator:^NSComparisonResult(TCTalk *obj1, TCTalk *obj2) {
+                return [obj2.favCount compare:obj1.favCount];
+            }];
+        } break;
+        case SortByRandom: {
+            self.talks = [NSObject shuffleArray:_talks];
+        } break;
+        default:
+            break;
+    }
+    
+}
 @end

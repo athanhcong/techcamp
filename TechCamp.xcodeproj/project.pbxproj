@@ -19,9 +19,6 @@
 		FC583D7118D16B3A005F50E6 /* NSObject+JsonMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D6618D16B3A005F50E6 /* NSObject+JsonMapping.m */; };
 		FC583D7218D16B3A005F50E6 /* NSObject+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D6818D16B3A005F50E6 /* NSObject+Random.m */; };
 		FC583D7618D179CE005F50E6 /* TCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D7518D179CE005F50E6 /* TCClient.m */; };
-		FC583D7B18D17FD8005F50E6 /* ILCannedURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D7A18D17FD8005F50E6 /* ILCannedURLProtocol.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FC583D7E18D18089005F50E6 /* YAFakeAPIServer.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D7D18D18089005F50E6 /* YAFakeAPIServer.m */; };
-		FC583D7F18D18089005F50E6 /* YAFakeAPIServer.m in Sources */ = {isa = PBXBuildFile; fileRef = FC583D7D18D18089005F50E6 /* YAFakeAPIServer.m */; };
 		FC583D8218D18233005F50E6 /* gist.json in Resources */ = {isa = PBXBuildFile; fileRef = FC583D8118D18233005F50E6 /* gist.json */; };
 		FC583D8318D18233005F50E6 /* gist.json in Resources */ = {isa = PBXBuildFile; fileRef = FC583D8118D18233005F50E6 /* gist.json */; };
 		FC583D8518D18565005F50E6 /* talks.json in Resources */ = {isa = PBXBuildFile; fileRef = FC583D8418D18565005F50E6 /* talks.json */; };
@@ -502,8 +499,6 @@
 				FC583D6D18D16B3A005F50E6 /* YAClient.m in Sources */,
 				FCE5502518D1621D0093388D /* main.m in Sources */,
 				FCE5502918D1621D0093388D /* AppDelegate.m in Sources */,
-				FC583D7E18D18089005F50E6 /* YAFakeAPIServer.m in Sources */,
-				FC583D7B18D17FD8005F50E6 /* ILCannedURLProtocol.m in Sources */,
 				FCAD925C18D198BC00FC43A8 /* TCTalkDetailViewController.m in Sources */,
 				FC583D7018D16B3A005F50E6 /* NSObject+JSON.m in Sources */,
 				FCC0259A18D1C92400F332E3 /* UIImage+ColorTransformation.m in Sources */,
@@ -516,7 +511,6 @@
 			files = (
 				FC583D8B18D186BC005F50E6 /* TCTalk.m in Sources */,
 				FCE5504718D1621D0093388D /* TechCampTests.m in Sources */,
-				FC583D7F18D18089005F50E6 /* YAFakeAPIServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,14 +630,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vo Thanh Cong (U222LCRYFK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vo Thanh Cong (U222LCRYFK)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TechCamp/TechCamp-Prefix.pch";
 				INFOPLIST_FILE = "TechCamp/TechCamp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0ED432B4-31BC-4CDF-9518-EC8C32527116";
+				PROVISIONING_PROFILE = "54CACF77-D1D3-4C5E-BF11-1F50A3B50698";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -654,14 +648,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vo Thanh Cong (U222LCRYFK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vo Thanh Cong (U222LCRYFK)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TechCamp/TechCamp-Prefix.pch";
 				INFOPLIST_FILE = "TechCamp/TechCamp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0ED432B4-31BC-4CDF-9518-EC8C32527116";
+				PROVISIONING_PROFILE = "54CACF77-D1D3-4C5E-BF11-1F50A3B50698";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

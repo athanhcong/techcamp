@@ -36,6 +36,16 @@
     
     [self loadCachedNotification];
     [self refreshNotifications];
+    
+    
+    
+    if (IS_OS_7_OR_LATER) {
+        UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Techcamp_Bot"]];
+        [tempImageView setFrame:self.tableView.frame];
+        [tempImageView setContentMode:UIViewContentModeCenter];
+        self.tableView.backgroundView = tempImageView;
+        
+    }
 
 }
 

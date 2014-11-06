@@ -11,7 +11,7 @@
 #import "TCTalk.h"
 #import "TCNotification.h"
 
-
+#import "NSObject+Random.h"
 
 @implementation TCClient
 
@@ -56,6 +56,10 @@
     id json = [[TMCache sharedCache] objectForKey:urlPath];
     NSArray *talks = [self talksFromJson:json];
 
+    talks = [talks sortedArrayUsingComparator:^NSComparisonResult(TCNotification *obj1, TCNotification *obj2) {
+        return [obj2.createdAt compare:obj1.createdAt];
+    }];
+    
     return talks;
 }
 

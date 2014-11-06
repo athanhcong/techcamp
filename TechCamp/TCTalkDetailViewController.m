@@ -91,7 +91,9 @@
     
     self.toolbarItems = @[voteButtonItem,
                           [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
-                          favButtonItem];
+                          favButtonItem,
+                          [[UIBarButtonItem alloc] initWithTitle:@" ? " style:UIBarButtonItemStylePlain target:self action:@selector(infoButtonPressed:)]
+                          ];
     
     
     self.voteButton = voteButton;
@@ -127,7 +129,7 @@
                             <p><font color='#181818' style='line-height:2em;'>%@</font></p>",
                             talk.talkDescription, talk.speakerDescription];
         
-    htmlString = [NSString stringWithFormat:@"<html><body style='font-size:16px;font-family:HelveticaNeue;'>%@%@<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></body></html>", htmlString, descriptionString];
+    htmlString = [NSString stringWithFormat:@"<html><body style='font-size:16px;font-family:HelveticaNeue;'>%@%@<p>&nbsp;</p></body></html>", htmlString, descriptionString];
     
     return htmlString;
 
@@ -155,9 +157,16 @@
 
 - (void)favButtonPressed:(id)sender {
     
-//    if ([NSDate date] compare:[NSDate dateWithTimeIntervalSinceReferenceDate:<#(NSTimeInterval)#>]) {
-//        <#statements#>
-//    }
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
+
+    NSInteger day = [components day];
+    NSInteger month = [components month];
+    NSInteger year = [components year];
+    
+    if (day != 23 || month != 3 || year != 2014) {
+        [[[UIAlertView alloc] initWithTitle:@"Favorite" message:@"So excited! This feature will be available on event day." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        return;
+    }
     
     
     self.favoriteButton.enabled = NO;
@@ -178,6 +187,12 @@
     }];
 }
 
+
+- (void)infoButtonPressed:(id)sender {
+    [[[UIAlertView alloc] initWithTitle:@"Help" message:
+      @"Vote button is used to choose topics presented in TechCamp.\nWhile Favorite button is used to choose Best Presenters Award.\n\nKeep camp\nand\nTechCamp Saigon."
+                               delegate:nil cancelButtonTitle:@"OK!" otherButtonTitles:nil] show];
+}
 
 - (void)showMessage:(NSString *)message type:(TSMessageNotificationType)type {
     

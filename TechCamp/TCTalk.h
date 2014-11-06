@@ -11,9 +11,11 @@
 @interface TCTalk : NSObject
 
 
-@property (nonatomic, strong) NSString *talkID, *talkDescription, *slideUrl, *speakerDescription, *speakerName, *speakerUrl, *title, *time, *location;
+@property (nonatomic, strong) NSString *talkID, *talkDescription, *slideUrl, *speakerDescription, *speakerName, *speakerUrl, *title, *time, *location, *createdAtString;
 @property (nonatomic, strong) NSNumber *duration, *favCount, *voteCount;
 
+
+@property (nonatomic, strong) NSDate *createdAt;
 @property (nonatomic, assign) BOOL faved, voted;
 
 + (id)objectFromJson:(id)json;
